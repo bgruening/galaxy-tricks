@@ -54,6 +54,8 @@
   `Bismark`
 - Get all genes that are covert by reads<br>
   `htseq-count` with a gene annotation [GTF file](http://www.ensembl.org/info/website/upload/gff.html) on your BAM file  → `Filter data on any column using simple expressions` with `c2>0`
+- Extract sequences from intercal files, like gff, bed, gtf. Returning FASTA file →<br>
+  `Extract Genomic DNA using coordinates from assembled/unassembled genomes`
 
 ## Workflows
 - Find two genes located nearby<br>
