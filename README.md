@@ -44,6 +44,8 @@
   `Unfold columns from a table` with `Column 3` and `Comma`
 - Split the first four characters of a line into it's own column<br>
   `Replace Text in entire line` with `Find Pattern`: ^(.{4}) and `Replace Pattern`: &\t
+- Add the basepairs "TA" to the end of each sequences<br>
+  `FASTA to Tabular` → `Add column` with `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
 
 ## HTS
 - Map RNA-seq data<br>
