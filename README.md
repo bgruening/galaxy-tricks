@@ -48,6 +48,8 @@
   `Replace Text in entire line` with `Find Pattern`: ^(.{4}) and `Replace Pattern`: &\t
 - Add the basepairs "TA" to the end of each sequences<br>
   `FASTA to Tabular` → `Add column` with `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
+- Add a quotation mark to every row<br>
+  `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
 
 ## HTS
 - Map RNA-seq data<br>
