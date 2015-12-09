@@ -50,6 +50,9 @@
   `FASTA to Tabular` → `Add column` with `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
 - Add a quotation mark to every row<br>
   `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
+- Count all columns with numbers that do not contain 0. Usefull if you want to calculate the mean but want to exclude all columns that are 0.<br>
+  `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ... 
+
 
 ## HTS
 - Map RNA-seq data<br>
