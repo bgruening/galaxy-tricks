@@ -55,18 +55,18 @@
   `Replace Text in entire line` with `Find Pattern`: ^(.{4}) and `Replace Pattern`: &\t
 - Add the basepairs "TA" to the end of each sequences<br>
   `FASTA to Tabular` → `Add column` with `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
-- Add a quotation mark to every row<br>
+- すべての行に引用符(!)を追加する<br>
   `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
-- Count all columns with numbers that do not contain 0. Usefull if you want to calculate the mean but want to exclude all columns that are 0.<br>
+- 0を含まない数値を含むすべての列を数える。平均を計算するが、0であるすべての列を除外したい場合に便利です。<br>
   `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ...
 
 
 ## HTS
-- Map RNA-seq data<br>
+- RNA-seqデータのマップ<br>
   `HISAT` or `TopHat`
-- Map DNA-seq data<br>
+- DNA-seqデータのマップ<br>
   `Bowtie` or `BWA`
-- Map methylC-seq data<br>
+- methylC-seq データのマップ<br>
   `Bismark`
 - Get all genes that are covert by reads<br>
   `htseq-count` with a gene annotation [GTF file](http://www.ensembl.org/info/website/upload/gff.html) on your BAM file  → `Filter data on any column using simple expressions` with `c2>0`
