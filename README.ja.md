@@ -2,33 +2,40 @@
 
 "You must feel the Force around you." *Yoda*
 
-- [Text processing](#text-processing)
+- [テキスト処理](#text-processing)
 - [HTS](#hts)
 - [Workflows](#workflows)
 - [More resources](#more-resources)
 - [Disclaimer](#disclaimer)
 
+# 翻訳の方針
 
-## Text processing
-- Convert comma separated files into tab-separated files<br>
+|英単語|この文書での日本語|他に検討した単語|
+| :----: | :----: | :----: |
+|column|列|カラム、フィールド|
+|comma|コンマ|カンマ|
+
+
+## テキスト処理
+- コンマ区切りファイルをタブ区切りファイルに変換する<br>
    `Convert delimiters to TAB`
-- FASTA files with unique sequences<br>
+- ユニークなシーケンスを持つFASTAファイル<br>
    `FASTA-to-Tabular` → `Unique occurrences of each record` (advanced parameters) → `Tabular-to-FASTA`
-- Remove sequences with `N` or any other character<br>
+- `N` などの文字を含むシーケンスを削除する<br>
   `FASTA-to-Tabular` → `Filter data on any column using simple expressions` with <br>(condition: `c2.find('N') != -1`) → `Tabular-to-FASTA`
-- Extracting the 3rd column from a 5 column file<br>
+- 5列あるファイルから3列目を抽出する<br>
   `Cut columns from a table` with `c3`
-- Reorder columns or column swap<br>
-  `Cut columns from a table` with `c3,c2,c1` 
+- 列の並べ替えまたは列の入れ替え<br>
+  `Cut columns from a table` with `c3,c2,c1`
 - Count how often one entry appears in column 1<br>
   `Datamash` with `Group by fields`: 1 and `Operation to perform`: count
-- Group all rows where column 1, 4 and 5 are identical<br>
+- 列1,4,5が同一である行すべてをグループ化する<br>
   `Datamash` with `Group by fields`: 1,4,5
-- Column-to-rows and rows-to-columns (transpose matrix)<br>
+- 列から行へ、行から列へ（転置行列）<br>
   `Transpose rows/columns`
-- Make your files smaller, e.g. for testing; subsampling of files<br>
+- ファイルサイズを小さくする。例えば、テストのためのファイルのサブサンプリング<br>
   `Select random lines from a file`
-- Make your sequence files smaller, e.g. for testing; subsampling sequences<br>
+- シーケンスファイルサイズを小さくする。例えば、テストのためのシーケンスのサブサンプリング<br>
   `Sub-sample sequences files`
 - Merge two files together according to one column in every file<br>
   `Join two files`
@@ -51,7 +58,7 @@
 - Add a quotation mark to every row<br>
   `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
 - Count all columns with numbers that do not contain 0. Usefull if you want to calculate the mean but want to exclude all columns that are 0.<br>
-  `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ... 
+  `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ...
 
 
 ## HTS
