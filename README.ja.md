@@ -55,7 +55,7 @@
   `Replace Text in entire line` with `Find Pattern`: ^(.{4}) and `Replace Pattern`: &\t
 - Add the basepairs "TA" to the end of each sequences<br>
   `FASTA to Tabular` → `Add column` with `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
-- すべての行に引用符(!)を追加する<br>
+- すべての行にダブルクォーテーション(!)を追加する<br>
   `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
 - 0を含まない数値を含むすべての列を数える。平均を計算するが、0であるすべての列を除外したい場合に便利です。<br>
   `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ...
