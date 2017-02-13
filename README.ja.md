@@ -1,6 +1,6 @@
 # Useful tricks and tipps for Galaxy users
 
-"You must feel the Force around you." *Yoda*
+"お主を取り巻くフォースを感じろ" *マスター・ヨーダ*
 
 - [テキスト処理](#text-processing)
 - [HTS](#hts)
