@@ -27,7 +27,7 @@
   `Cut columns from a table` with `c3`
 - 列の並べ替えまたは列の入れ替え<br>
   `Cut columns from a table` with `c3,c2,c1`
-- Count how often one entry appears in column 1<br>
+- 列1二、あるエントリーが現れる数を数える<br>
   `Datamash` with `Group by fields`: 1 and `Operation to perform`: count
 - 列1,4,5が同一である行すべてをグループ化する<br>
   `Datamash` with `Group by fields`: 1,4,5
