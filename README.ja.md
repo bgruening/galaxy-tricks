@@ -80,7 +80,7 @@
 
 ## More Resources
  - Galaxy 101 - a must read for all HTS Padawan: https://wiki.galaxyproject.org/Learn/GalaxyNGS110
- - A lot of videos to learn using Galaxy while eating popcorn: https://vimeo.com/galaxyproject
+ - ポップコーンを食べながらGalaxyの使い方を学ぶたくさんのビデオ: https://vimeo.com/galaxyproject
 
 ## Disclaimer
 All tools mentioned here are available from the Galaxy Tool Shed. Kindly ask your Galaxy Administrator to get access to them.
