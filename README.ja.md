@@ -39,7 +39,7 @@
   `Sub-sample sequences files`
 - Merge two files together according to one column in every file<br>
   `Join two files`
-- Add unique column<br>
+- ユニークな列を追加する<br>
   `Add column to an existing dataset` with `iterate`: Yes
 - Get rid of all rows where column 2 has values greater than 0<br>
   `Filter data on any column using simple expressions` with `c2>0`
