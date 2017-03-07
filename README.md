@@ -61,6 +61,11 @@
   `Bowtie` or `BWA`
 - Map methylC-seq data<br>
   `Bismark`
+- Downsample BAM/SAM files<br>
+  `BAM/SAM Mapping Stats` will give you the number of reads/read pair in your
+  BAM file in case you don't know it already. Then you just divide the number of reads
+  you want to downscale to with the number of reads you have and use this
+  fraction as the probability in `Picard – Downsample SAM/BAM`.
 - Get all genes that are covert by reads<br>
   `htseq-count` with a gene annotation [GTF file](http://www.ensembl.org/info/website/upload/gff.html) on your BAM file  → `Filter data on any column using simple expressions` with `c2>0`
 - Extract sequences from intercal files, like gff, bed, gtf. Returning FASTA file →<br>
