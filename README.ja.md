@@ -1,4 +1,4 @@
-# Useful tricks and tipps for Galaxy users
+# Galaxy ユーザーのための便利な小ネタと裏技
 
 "お主を取り巻くフォースを感じろ" *マスター・ヨーダ*
 
@@ -24,13 +24,13 @@
 - `N` などの文字を含むシーケンスを削除する<br>
   `FASTA-to-Tabular` → `Filter data on any column using simple expressions` with <br>(condition: `c2.find('N') != -1`) → `Tabular-to-FASTA`
 - 5列あるファイルから3列目を抽出する<br>
-  `Cut columns from a table` with `c3`
+  `Cut columns from a table` で `c3`
 - 列の並べ替えまたは列の入れ替え<br>
-  `Cut columns from a table` with `c3,c2,c1`
+  `Cut columns from a table` で `c3,c2,c1`
 - 列1二、あるエントリーが現れる数を数える<br>
-  `Datamash` with `Group by fields`: 1 and `Operation to perform`: count
-- 列1,4,5が同一である行すべてをグループ化する<br>
-  `Datamash` with `Group by fields`: 1,4,5
+  `Datamash` で `Group by fields`: 1、`Operation to perform`: count とする
+- 列1,4,5が同一である行をすべてグループ化する<br>
+  `Datamash` で `Group by fields`: 1,4,5
 - 列から行へ、行から列へ（転置行列）<br>
   `Transpose rows/columns`
 - ファイルサイズを小さくする。例えば、テストのためのファイルのサブサンプリング<br>
@@ -40,47 +40,47 @@
 - Merge two files together according to one column in every file<br>
   `Join two files`
 - ユニークな列を追加する<br>
-  `Add column to an existing dataset` with `iterate`: Yes
-- Get rid of all rows where column 2 has values greater than 0<br>
-  `Filter data on any column using simple expressions` with `c2>0`
-- Get all rows where column 4 starts with hsa<br>
-  `Filter data on any column using simple expressions` with `c4.startswith('hsa')`
-- Get rid of all rows where the sum of column 2 and 3 is greater than 10<br>
-  `Filter data on any column using simple expressions` with `c2+c3>10`
-- Get rid of all rows where the length of my text in column 2 is greater than 10<br>
-  `Filter data on any column using simple expressions` with `len(c2)>10`
-- Create new rows for every comma separated value in column 3; Unfolding<br>
-  `Unfold columns from a table` with `Column 3` and `Comma`
-- Split the first four characters of a line into it's own column<br>
-  `Replace Text in entire line` with `Find Pattern`: ^(.{4}) and `Replace Pattern`: &\t
-- Add the basepairs "TA" to the end of each sequences<br>
-  `FASTA to Tabular` → `Add column` with `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
-- すべての行にダブルクォーテーション(!)を追加する<br>
-  `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
+  `Add column to an existing dataset` で `iterate`: Yes とする
+- 2列目が0よりも大きな値である行をすべて削除する<br>
+  `Filter data on any column using simple expressions` で `c2>0`
+- 4列目が「hsa」で始まる行をすべて取得する<br>
+  `Filter data on any column using simple expressions` で `c4.startswith('hsa')`
+- 2列目と3列目の合計が10よりも大きい行をすべて削除する<br>
+  `Filter data on any column using simple expressions` で `c2+c3>10`
+- 2列目に含まれる文字列の長さが10よりも大きい行をすべて削除する<br>
+  `Filter data on any column using simple expressions` で `len(c2)>10`
+- 3列目に含まれるコンマで区切られたすべての値ごとに新しい行を作成する（展開）<br>
+  `Unfold columns from a table` で `Column 3` かつ `Comma`
+- 文字列のはじめの4文字を切り取って、新しい列の値にする<br>
+  `Replace Text in entire line` で `Find Pattern`: ^(.{4}) かつ `Replace Pattern`: &\t
+- 「TA」という塩基を全ての塩基配列の終わりに加える<br>
+  `FASTA to Tabular` → `Add column` で `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
+- すべての行にダブルクォーテーション(")を追加する<br>
+  `Compute an expression on every row` で `chr(34)` (34 は [ASCII](http://www.asciitable.com/) コードの `"`)
 - 0を含まない数値を含むすべての列を数える。平均を計算するが、0であるすべての列を除外したい場合に便利です。<br>
-  `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ...
+  `Compute an expression on every row` で `bool(c1) + bool(c1) + bool(c3)` ...
 
 
-## HTS
+## 次世代シークエンシング
 - RNA-seqデータのマップ<br>
   `HISAT` or `TopHat`
 - DNA-seqデータのマップ<br>
   `Bowtie` or `BWA`
 - methylC-seq データのマップ<br>
   `Bismark`
-- Get all genes that are covert by reads<br>
-  `htseq-count` with a gene annotation [GTF file](http://www.ensembl.org/info/website/upload/gff.html) on your BAM file  → `Filter data on any column using simple expressions` with `c2>0`
-- Extract sequences from intercal files, like gff, bed, gtf. Returning FASTA file →<br>
+- リードで変換される遺伝子をすべて取得する<br>
+  `htseq-count` で BAM ファイルの遺伝子アノテーション [GTF file](http://www.ensembl.org/info/website/upload/gff.html) を指定 → `Filter data on any column using simple expressions` で `c2>0`
+- gff, bed, gtf といったファイルから塩基配列を抽出して、FASTA ファイルを返す<br>
   `Extract Genomic DNA using coordinates from assembled/unassembled genomes`
 
-## Workflows
-- Find two genes located nearby<br>
+## ワークフロー
+- 近くに位置する2つの遺伝子を探す<br>
   [Description](https://github.com/bgruening/galaxytools/tree/master/workflows/ncbi_blast_plus/find_genes_located_nearby) :: [Tool Shed](https://toolshed.g2.bx.psu.edu/view/bgruening/find_genes_located_nearby_workflow)
 
 
-## More Resources
+## もっと学びたい方へ
  - Galaxy 101 - a must read for all HTS Padawan: https://wiki.galaxyproject.org/Learn/GalaxyNGS110
  - ポップコーンを食べながらGalaxyの使い方を学ぶたくさんのビデオ: https://vimeo.com/galaxyproject
 
-## Disclaimer
-All tools mentioned here are available from the Galaxy Tool Shed. Kindly ask your Galaxy Administrator to get access to them.
+## 免責条項
+ここに記載された全てのツールは Galaxy Tool Shed で入手できます。使ってみたいときはあなたのお近くの Galaxy 管理者に尋ねてみてください。
