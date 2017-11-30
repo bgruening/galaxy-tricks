@@ -2,11 +2,11 @@
 
 "お主を取り巻くフォースを感じろ" *マスター・ヨーダ*
 
-- [テキスト処理](#text-processing)
-- [HTS](#hts)
-- [Workflows](#workflows)
-- [More resources](#more-resources)
-- [Disclaimer](#disclaimer)
+- [テキスト処理](#テキスト処理)
+- [次世代シークエンシング](#次世代シークエンシング)
+- [ワークフロー](#ワークフロー)
+- [もっと学びたい方へ](#もっと学びたい方へ)
+- [免責条項](#免責条項)
 
 # 翻訳の方針
 
@@ -14,7 +14,8 @@
 | :----: | :----: | :----: |
 |column|列|カラム、フィールド|
 |comma|コンマ|カンマ|
-
+|all|すべて|全て|
+|HTS|次世代シークエンシング|HTS、NGS、ハイスループットシークエンシング|
 
 ## テキスト処理
 - コンマ区切りファイルをタブ区切りファイルに変換する<br>
@@ -27,7 +28,7 @@
   `Cut columns from a table` で `c3`
 - 列の並べ替えまたは列の入れ替え<br>
   `Cut columns from a table` で `c3,c2,c1`
-- 列1二、あるエントリーが現れる数を数える<br>
+- 列1に、あるエントリーが現れる数を数える<br>
   `Datamash` で `Group by fields`: 1、`Operation to perform`: count とする
 - 列1,4,5が同一である行をすべてグループ化する<br>
   `Datamash` で `Group by fields`: 1,4,5
@@ -53,13 +54,12 @@
   `Unfold columns from a table` で `Column 3` かつ `Comma`
 - 文字列のはじめの4文字を切り取って、新しい列の値にする<br>
   `Replace Text in entire line` で `Find Pattern`: ^(.{4}) かつ `Replace Pattern`: &\t
-- 「TA」という塩基を全ての塩基配列の終わりに加える<br>
+- 「TA」という塩基をすべての塩基配列の終わりに加える<br>
   `FASTA to Tabular` → `Add column` で `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
 - すべての行にダブルクォーテーション(")を追加する<br>
   `Compute an expression on every row` で `chr(34)` (34 は [ASCII](http://www.asciitable.com/) コードの `"`)
 - 0を含まない数値を含むすべての列を数える。平均を計算するが、0であるすべての列を除外したい場合に便利です。<br>
   `Compute an expression on every row` で `bool(c1) + bool(c1) + bool(c3)` ...
-
 
 ## 次世代シークエンシング
 - RNA-seqデータのマップ<br>
@@ -77,10 +77,9 @@
 - 近くに位置する2つの遺伝子を探す<br>
   [Description](https://github.com/bgruening/galaxytools/tree/master/workflows/ncbi_blast_plus/find_genes_located_nearby) :: [Tool Shed](https://toolshed.g2.bx.psu.edu/view/bgruening/find_genes_located_nearby_workflow)
 
-
 ## もっと学びたい方へ
  - Galaxy 101 - a must read for all HTS Padawan: https://wiki.galaxyproject.org/Learn/GalaxyNGS110
  - ポップコーンを食べながらGalaxyの使い方を学ぶたくさんのビデオ: https://vimeo.com/galaxyproject
 
 ## 免責条項
-ここに記載された全てのツールは Galaxy Tool Shed で入手できます。使ってみたいときはあなたのお近くの Galaxy 管理者に尋ねてみてください。
+ここに記載されたすべてのツールは Galaxy Tool Shed で入手できます。使ってみたいときはお近くの Galaxy 管理者に相談してみてください。
