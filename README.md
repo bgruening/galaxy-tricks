@@ -3,6 +3,7 @@
 "You must feel the Force around you." *Yoda*
 
 - [Text processing](#text-processing)
+- [Statistics](#statisctics)
 - [HTS](#hts)
 - [Workflows](#workflows)
 - [More resources](#more-resources)
@@ -52,6 +53,23 @@
   `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
 - Count all columns with numbers that do not contain 0. Usefull if you want to calculate the mean but want to exclude all columns that are 0.<br>
   `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ... 
+
+
+## Statistics
+- Obtain descriptive statistics on your data (count, sum, min, max, median, quartiles, variance, skewness, kurtosis, ...)<br>
+   `Datamash (operations on tabular data)` from [Datamash_ops repo](https://toolshed.g2.bx.psu.edu/view/iuc/datamash_ops/2f3c6f2dcf39)
+- Data normalization<br>
+  `Normalize a dataset by row or column sum to obtain proportion or percentage` from [normalize_dataset repo](https://toolshed.g2.bx.psu.edu/view/bebatut/normalize_dataset/72633301cc0d)  
+- Calculate Pearson correlation<br>
+  `Pearson and APOS correlation between any two numeric columns` from [pearson_correlation repo](https://toolshed.g2.bx.psu.edu/view/devteam/pearson_correlation/302dcb834898) 
+- Operate a Fisher's exact test<br>
+  `Fisher's exact test on two gene hit lists` from [fishertest repo](https://toolshed.g2.bx.psu.edu/view/artbio/fishertest/5f784a95ce13)
+- Calculate Univariate statistics<br>
+  `Univariate Univariate statistics` from [univariate repo](https://toolshed.g2.bx.psu.edu/view/ethevenot/univariate/140290de7986)
+- Calculate Multivariate statistics<br>
+  `Multivariate PCA, PLS and OPLS` from [multivariate repo](https://toolshed.g2.bx.psu.edu/view/ethevenot/multivariate/e91de3b04320) 
+- Operate an ANOVA<br>
+  `ANOVA N-way anova. With ou Without interactions` from [anova repo](https://toolshed.g2.bx.psu.edu/view/lecorguille/anova/4f06e1796334) 
 
 
 ## HTS
