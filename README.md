@@ -52,6 +52,8 @@
   `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
 - Count all columns with numbers that do not contain 0. Usefull if you want to calculate the mean but want to exclude all columns that are 0.<br>
   `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ... 
+- Calculate log2 (not log10) from a column (e.g. c1) adding a new column
+  `Compute an expression on every row` with `log(c1,2)`
 
 
 ## HTS
