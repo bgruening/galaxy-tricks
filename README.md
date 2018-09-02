@@ -22,6 +22,8 @@
   `Cut columns from a table` with `c3,c2,c1` 
 - Count how often one entry appears in column 1<br>
   `Datamash` with `Group by fields`: 1 and `Operation to perform`: count
+- Remove all lines that contain a character (comma in this case)<br>
+  `Text transformation with sed` with `SED Programm`: /,/d
 - Group all rows where column 1, 4 and 5 are identical<br>
   `Datamash` with `Group by fields`: 1,4,5
 - Column-to-rows and rows-to-columns (transpose matrix)<br>
