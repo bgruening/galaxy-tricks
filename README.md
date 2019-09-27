@@ -37,13 +37,13 @@
 - Add unique column<br>
   `Add column to an existing dataset` with `iterate`: Yes
 - Get rid of all rows where column 2 has values greater than 0<br>
-  `Filter data on any column using simple expressions` with `c2>0`
+  `Filter data on any column using simple expressions` with `c2<0`
 - Get all rows where column 4 starts with hsa<br>
   `Filter data on any column using simple expressions` with `c4.startswith('hsa')`
 - Get rid of all rows where the sum of column 2 and 3 is greater than 10<br>
-  `Filter data on any column using simple expressions` with `c2+c3>10`
+  `Filter data on any column using simple expressions` with `c2+c3<10`
 - Get rid of all rows where the length of my text in column 2 is greater than 10<br>
-  `Filter data on any column using simple expressions` with `len(c2)>10`
+  `Filter data on any column using simple expressions` with `len(c2)<10`
 - Create new rows for every comma separated value in column 3; Unfolding<br>
   `Unfold columns from a table` with `Column 3` and `Comma`
 - Split the first four characters of a line into it's own column<br>
