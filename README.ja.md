@@ -43,13 +43,13 @@
 - ユニークな列を追加する<br>
   `Add column to an existing dataset` で `iterate`: Yes とする
 - 2列目が0よりも大きな値である行をすべて削除する<br>
-  `Filter data on any column using simple expressions` で `c2>0`
+  `Filter data on any column using simple expressions` で `c2<=0`
 - 4列目が「hsa」で始まる行をすべて取得する<br>
   `Filter data on any column using simple expressions` で `c4.startswith('hsa')`
 - 2列目と3列目の合計が10よりも大きい行をすべて削除する<br>
-  `Filter data on any column using simple expressions` で `c2+c3>10`
+  `Filter data on any column using simple expressions` で `c2+c3<=10`
 - 2列目に含まれる文字列の長さが10よりも大きい行をすべて削除する<br>
-  `Filter data on any column using simple expressions` で `len(c2)>10`
+  `Filter data on any column using simple expressions` で `len(c2)<=10`
 - 3列目に含まれるコンマで区切られたすべての値ごとに新しい行を作成する（展開）<br>
   `Unfold columns from a table` で `Column 3` かつ `Comma`
 - 文字列のはじめの4文字を切り取って、新しい列の値にする<br>
