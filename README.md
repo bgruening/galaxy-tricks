@@ -1,4 +1,4 @@
-# Useful tricks and tipps for Galaxy users
+# Useful tricks and tips for Galaxy users
 
 "You must feel the Force around you." *Yoda*
 
