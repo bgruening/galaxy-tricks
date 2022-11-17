@@ -78,7 +78,7 @@
   [Description](https://github.com/bgruening/galaxytools/tree/master/workflows/ncbi_blast_plus/find_genes_located_nearby) :: [Tool Shed](https://toolshed.g2.bx.psu.edu/view/bgruening/find_genes_located_nearby_workflow)
 
 ## もっと学びたい方へ
- - Galaxy 101 - a must read for all HTS Padawan: https://wiki.galaxyproject.org/Learn/GalaxyNGS110
+ - Galaxy 101 - a must read for all HTS Padawan: https://galaxyproject.org/learn/galaxy-ngs101/
  - ポップコーンを食べながらGalaxyの使い方を学ぶたくさんのビデオ: https://vimeo.com/galaxyproject
 
 ## 免責条項

@@ -81,7 +81,7 @@
 
 
 ## More Resources
- - Galaxy 101 - a must read for all HTS Padawan: https://wiki.galaxyproject.org/Learn/GalaxyNGS110
+ - Galaxy 101 - a must read for all HTS Padawan: https://galaxyproject.org/learn/galaxy-ngs101/
  - A lot of videos to learn using Galaxy while eating popcorn: https://vimeo.com/galaxyproject
 
 ## Disclaimer
